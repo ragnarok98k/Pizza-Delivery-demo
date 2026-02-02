@@ -1,0 +1,68 @@
+1. Overview
+A high-fidelity web application prototype for ordering pizza, heavily inspired by the "Pizzy" Dribbble interaction. It allows users to browse a menu, see nutritional data, and "checkout" by sending order details directly to the owner via email or a dashboard.
+
+2. User Features (Functional Requirements)
+Hero Menu: Display pizzas with high-quality rotating images (matching the Dribbble vibe).
+
+Nutritional Overlay: A toggle or "info" icon for each item showing Calories, Protein, Carbs, and Fats.
+
+Pizzy Interaction: The "Add to Cart" button must morph into a +/- counter (as seen in the design).
+
+Cart System: Real-time price calculation including tax and a "dummy" delivery fee.
+
+Checkout Flow: * Address Input (Manual text field).
+
+Payment Selection: Cash or UPI.
+
+Note: If UPI is selected, show a static QR code or a "Pay on Delivery via UPI" message.
+
+Order Confirmation: A "Success" animation after clicking "Place Order."
+
+3. Owner Features
+Order Routing: When a user clicks "Place Order," the system sends the full order (Item, Quantity, Address, Total) to your email.
+
+🛠 Step-by-Step Implementation Guide
+Step 1: Set Up Your Tech Stack
+For the "Dribbble-smooth" look, standard HTML/CSS is hard. I recommend:
+
+Framework: React.js (e.g., via Vite).
+
+Styling: Tailwind CSS (for the clean layout).
+
+Animations: Framer Motion (This is crucial for the "morphing" button and page transitions).
+
+Form/Email: EmailJS (This lets you send the order to your email without needing a complex backend server).
+
+Step 2: Build the "Pizzy" Component
+Start with the heart of the design: the Pizza Card.
+
+Find a "top-view" pizza PNG on CleanPNG or Unsplash.
+
+Implement the code I gave you earlier for the Morphing Button.
+
+Add a "Nutrition" button that opens a small tooltip or modal.
+
+Step 3: Manage the Cart Logic
+Create a global "State" (using React useState or Context API) that tracks:
+
+What is in the cart.
+
+The total price.
+
+Tip: Use the same dark navy (#0F172A) and orange (#FF6B35) colors from the design.
+
+Step 4: The Checkout "Mock"
+Create a simple checkout page.
+
+Payment Method: Use a radio button for "Cash on Delivery" and "UPI."
+
+The "Payment": Since you aren't integrating a gateway, just show a "Proceed" button.
+
+Order Notification: Use EmailJS. You set up a template in their dashboard (e.g., "New Order: {{pizza_name}} - Address: {{user_address}}") and call it when the user clicks "Place Order."
+
+Step 5: Hosting (Get it Live)
+Push your code to GitHub.
+
+Connect it to Vercel or Netlify (both are free).
+
+Now you can share a link with anyone, and when they "order," you'll get an email!
